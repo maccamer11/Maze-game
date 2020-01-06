@@ -7,8 +7,8 @@ const width = window.innerWidth
 const height = window.innerHeight
 
 //Maze dimensions
-const cellsHorizontal = 12
-const cellsVertical = 10
+const cellsHorizontal = 20
+const cellsVertical = 16
 
 const unitLengthX = width / cellsHorizontal
 const unitLengthY = height / cellsVertical
