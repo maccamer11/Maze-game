@@ -190,7 +190,7 @@ const goal = Bodies.rectangle(
 World.add(world, goal)
 
 // Ball
-const ballRadius = Math.min(unitLengthX, unitLengthY) / 3
+const ballRadius = Math.min(unitLengthX, unitLengthY) / 4
 const ball = Bodies.circle(
     unitLengthX / 2, // ball X
     unitLengthY / 2, //ball Y
