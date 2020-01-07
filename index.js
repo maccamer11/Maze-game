@@ -7,8 +7,11 @@ const width = window.innerWidth
 const height = window.innerHeight
 
 //Maze dimensions
-const cellsHorizontal = 20
-const cellsVertical = 16
+const mazeWidth = prompt("Please enter your maze width:", "12");
+const mazeHeight = prompt("Please enter your maze height:", "10");
+
+const cellsHorizontal = parseInt(mazeWidth)
+const cellsVertical = parseInt(mazeHeight)
 
 const unitLengthX = width / cellsHorizontal
 const unitLengthY = height / cellsVertical
@@ -32,19 +35,19 @@ Runner.run(Runner.create(), engine)
 
 //Border
 const walls = [
-    Bodies.rectangle(width / 2, 0, width, 3, {
+    Bodies.rectangle(width / 2, 0, width, 1, {
         isStatic: true
     }),
 
-    Bodies.rectangle(width / 2, height, width, 3, {
+    Bodies.rectangle(width / 2, height, width, 1, {
         isStatic: true
     }),
 
-    Bodies.rectangle(0, height / 2, 3, height, {
+    Bodies.rectangle(0, height / 2, 1, height, {
         isStatic: true
     }),
 
-    Bodies.rectangle(width, height / 2, 3, height, {
+    Bodies.rectangle(width, height / 2, 1, height, {
         isStatic: true
     })
 ];
@@ -187,7 +190,7 @@ const goal = Bodies.rectangle(
 World.add(world, goal)
 
 // Ball
-const ballRadius = Math.min(unitLengthX, unitLengthY) / 4
+const ballRadius = Math.min(unitLengthX, unitLengthY) / 3
 const ball = Bodies.circle(
     unitLengthX / 2, // ball X
     unitLengthY / 2, //ball Y
