@@ -138,7 +138,7 @@ horizontals.forEach((row, rowIndex) => {
             columnIndex * unitLengthX + unitLengthX / 2, // center X
             rowIndex * unitLengthY + unitLengthY, // center Y
             unitLengthX, // rect length
-            10, // rect width
+            4, // rect width
             {
                 isStatic: true,
                 label: 'wall',
@@ -159,7 +159,7 @@ verticals.forEach((row, rowIndex) => {
         const wall = Bodies.rectangle(
             columnIndex * unitLengthX + unitLengthX, // center X
             rowIndex * unitLengthY + unitLengthY / 2, // center Y
-            10,
+            4,
             unitLengthY,
             {
                 isStatic: true,
@@ -190,7 +190,7 @@ const goal = Bodies.rectangle(
 World.add(world, goal)
 
 // Ball
-const ballRadius = Math.min(unitLengthX, unitLengthY) / 4
+const ballRadius = Math.min(unitLengthX, unitLengthY) / 3
 const ball = Bodies.circle(
     unitLengthX / 2, // ball X
     unitLengthY / 2, //ball Y
@@ -207,16 +207,16 @@ World.add(world, ball)
 document.addEventListener('keydown', event => {
     const { x, y } = ball.velocity
     if (event.keyCode === 38) {
-        Body.setVelocity(ball, { x, y: y - 5 }) //Up
+        Body.setVelocity(ball, { x, y: y - 3 }) //Up
     }
     if (event.keyCode === 39) {
-        Body.setVelocity(ball, { x: x + 5, y }) //Right
+        Body.setVelocity(ball, { x: x + 3, y }) //Right
     }
     if (event.keyCode === 40) {
-        Body.setVelocity(ball, { x, y: y + 5 }) //Down
+        Body.setVelocity(ball, { x, y: y + 3 }) //Down
     }
     if (event.keyCode === 37) {
-        Body.setVelocity(ball, { x: x - 5, y }) //Left
+        Body.setVelocity(ball, { x: x - 3, y }) //Left
     }
 })
 
